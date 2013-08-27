@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Xpd_Sigep>
+      <version>1.0.0</version>
+    </Xpd_Sigep>
+  </modules>
+  <global>
+    <helpers>
+      <sigep>
+        <class>Xpd_Sigep_Helper</class>
+      </sigep>
+    </helpers>
+	<models>
+	  <sigep>
+		<class>Xpd_Sigep_Model</class>
+		<resourceModel>sigep_mysql4</resourceModel>
+	  </sigep>
+	  <sigep_mysql4>
+		<class>Xpd_Sigep_Model_Mysql4</class>
+		<entities>		  
+			  <sigep>
+				<table>sigep</table>
+			  </sigep>
+		</entities>
+	  </sigep_mysql4>
+	</models>
+	<resources>
+	  <sigep_setup>
+		<setup>
+		  <module>Xpd_Sigep</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </sigep_setup>
+	  <sigep_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </sigep_write>
+	  <sigep_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </sigep_read>
+	</resources>
+    <events>
+	  <rss_catalog_special_xml_callback> <!-- identifier of the event we want to catch -->
+        <observers>
+          <rss_catalog_special_xml_callback_handler> <!-- identifier of the event handler -->
+            <type>model</type> <!-- class method call type; valid are model, object and singleton -->
+            <class>sigep/observer</class> <!-- observers class alias -->
+            <method>metodopadrao</method>  <!-- observer's method to be called -->
+            <args></args> <!-- additional arguments passed to observer -->
+          </rss_catalog_special_xml_callback_handler>
+        </observers>
+      </rss_catalog_special_xml_callback>
+    </events>
+  </global>
+</config> 

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Xpd_Sigep>
+      <active>true</active>
+      <codePool>community</codePool>
+      <version>1.0.0</version>
+    </Xpd_Sigep>
+  </modules>
+</config>
