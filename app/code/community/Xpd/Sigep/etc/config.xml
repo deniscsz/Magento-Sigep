@@ -45,17 +45,37 @@
 		</connection>
 	  </sigep_read>
 	</resources>
-    <events>
-	  <rss_catalog_special_xml_callback> <!-- identifier of the event we want to catch -->
-        <observers>
-          <rss_catalog_special_xml_callback_handler> <!-- identifier of the event handler -->
-            <type>model</type> <!-- class method call type; valid are model, object and singleton -->
-            <class>sigep/observer</class> <!-- observers class alias -->
-            <method>metodopadrao</method>  <!-- observer's method to be called -->
-            <args></args> <!-- additional arguments passed to observer -->
-          </rss_catalog_special_xml_callback_handler>
-        </observers>
-      </rss_catalog_special_xml_callback>
-    </events>
+    <!-- events-->
+    <rewrite>
+    <xpd_sigep_adminhtml_sales_order>
+        <from><![CDATA[#/admin/sales_order/#]]></from>
+        <to>/sigep/adminhtml_sales_order/</to>
+    </xpd_sigep_adminhtml_sales_order>
+    </rewrite>
+    <blocks>
+        <adminhtml>
+            <rewrite>
+                <sales_order_grid>Xpd_Sigep_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+            </rewrite>
+        </adminhtml>
+    </blocks>
   </global>
+  <admin>
+    <routers>
+        <xpd_sigep>
+            <use>admin</use>
+            <args>
+                <module>Xpd_Sigep</module>
+                <frontName>sigep</frontName>
+            </args>
+        </xpd_sigep>			
+		<adminhtml>
+			<args>
+			  <modules>
+				<Xpd_Sigep_Adminhtml before="Mage_Adminhtml">Xpd_Sigep_Adminhtml</Xpd_Sigep_Adminhtml>
+			  </modules>
+			</args>
+		</adminhtml>
+    </routers>
+  </admin>
 </config> 
