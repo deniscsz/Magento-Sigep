@@ -1,7 +1,7 @@
-Magento Sigep Web
+Magento Sigep
 ===============
 
-Módulo para emissão do arquivo de importação para o software dos Correios SIGEP WEB.
+Módulo para emissão do arquivo de importação para o software dos Correios SIGEP.
 
 Bugs?
 --------------
