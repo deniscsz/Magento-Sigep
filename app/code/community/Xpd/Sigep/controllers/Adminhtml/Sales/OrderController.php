@@ -19,11 +19,7 @@ class Xpd_Sigep_Adminhtml_Sales_OrderController extends Mage_Adminhtml_Sales_Ord
         
         if($file)
         {
-<<<<<<< HEAD
             fwrite($file,"1SIGEP DESTINATARIO NACIONAL\n");
-=======
-            fwrite($file,"1SIGEP DESTINATARIO NACIONAL");
->>>>>>> origin/master
             //fwrite($file,"Número;CNPJ/CPF;Nome;EMAIL;Cep;Logradouro;Número;Complemento;Bairro;Cidade;Telefone;Celular\r\n");
             $shippings = $sigep->getShipping2Csv($_file,$orderIds);
             
@@ -31,7 +27,6 @@ class Xpd_Sigep_Adminhtml_Sales_OrderController extends Mage_Adminhtml_Sales_Ord
             {
                 $write = fwrite($file,"2".
                     str_pad($_fields['cpf'], 14, " ", STR_PAD_RIGHT).
-<<<<<<< HEAD
                     str_pad($this->retira_acentos($_fields['nome']), 50, " ", STR_PAD_RIGHT).
                     str_pad($_fields['email'], 50, " ", STR_PAD_RIGHT).
                     str_pad('', 50, " ", STR_PAD_RIGHT).
@@ -45,18 +40,6 @@ class Xpd_Sigep_Adminhtml_Sales_OrderController extends Mage_Adminhtml_Sales_Ord
                     str_pad($_fields['telefone'], 18, " ", STR_PAD_RIGHT).
                     str_pad($_fields['celular'], 12, " ", STR_PAD_RIGHT).
                     str_pad('', 12, " ", STR_PAD_RIGHT)."\n"
-=======
-                    str_pad($_fields['nome'], 50, " ", STR_PAD_RIGHT).
-                    str_pad($_fields['email'], 50, " ", STR_PAD_RIGHT).
-                    str_pad($_fields['cep'], 8, " ", STR_PAD_RIGHT).
-                    str_pad($_fields['logradouro'], 50, " ", STR_PAD_RIGHT).
-                    str_pad($_fields['numero'], 6, " ", STR_PAD_RIGHT).
-                    str_pad($_fields['complemento'], 30, " ", STR_PAD_RIGHT).
-                    str_pad($_fields['bairro'], 50, " ", STR_PAD_RIGHT).
-                    str_pad($_fields['cidade'], 50, " ", STR_PAD_RIGHT).
-                    str_pad($_fields['telefone'], 18, " ", STR_PAD_RIGHT).
-                    str_pad($_fields['celular'], 12, " ", STR_PAD_RIGHT)
->>>>>>> origin/master
                 );
                 
                 if($write)
@@ -69,11 +52,7 @@ class Xpd_Sigep_Adminhtml_Sales_OrderController extends Mage_Adminhtml_Sales_Ord
                 }
             }
             
-<<<<<<< HEAD
             fwrite($file,"9".str_pad(count($shippings), 6, "0", STR_PAD_LEFT)."\n");
-=======
-            fwrite($file,"9".str_pad(count($shippings), 6, "0", STR_PAD_LEFT));
->>>>>>> origin/master
         }
         else
         {
