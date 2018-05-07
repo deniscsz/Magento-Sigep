@@ -2,6 +2,7 @@ Magento Sigep
 ===============
 
 Módulo para emissão do arquivo de importação para o software dos Correios SIGEP.
+Com o advento do Sigep Web esse módulo foi descontinuado.
 
 Bugs?
 --------------
